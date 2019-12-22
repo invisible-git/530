@@ -1,0 +1,56 @@
+#define SSID        "ba" //改为你的热点名称, 不要有中文
+#define PASSWORD    "qwer1234"//改为你的WiFi密码Wi-Fi密码
+#define DEVICEID    "561951998" //OneNet上的设备ID
+String apiKey = "Q2v6cZ3UYSDWEuxTLOK8EnV=uww=";//与你的设备绑定的APIKey
+
+#define HOST_NAME   "api.heclouds.com"
+#define HOST_PORT   (80)
+#define INTERVAL_NET      5000             //定义发送时间
+#define INTERVAL_SENSOR   5000             //定义传感器采样时间间隔  597000
+
+#include <Wire.h>                                  //调用库  
+#include <ESP8266.h>
+#include <I2Cdev.h>                                //调用库  
+
+/*定义传感器连接的引脚*/
+#define  sensorPin_1  A0
+#define  sensorPin_2  A2
+//#define IDLE_TIMEOUT_MS  3000    
+
+#include <SoftwareSerial.h>
+#define EspSerial mySerial
+#define UARTSPEED  9600
+SoftwareSerial mySerial(2, 3); /* RX:D3, TX:D2 */
+ESP8266 wifi(&EspSerial);
+unsigned long net_time1 = millis();                          //数据上传服务器时间
+unsigned long sensor_time = millis();                        //传感器采样时间计时器
+float sensor_A0,sensor_A2;//sensor_A6;sensor_D12;                                              
+char buf[10];                                                //储存数据的字符串
+String jsonToSend,postString;
+
+#include<Microduino_Ultrasonic.h>            //引用超声波类库
+Ultrasonic Ultrasonic1(UJTRASONIC_ADDR_1);//将Ultrasonic实例化
+uint16_t Distance;                         //定义变量（uint16_t表示unsigned short int)
+int Min=0,Max=300,Bool;                //使用时适当改变Min和Max的值
+
+void setup() {
+   //初始化串口波特率  
+    Wire.begin();
+    Serial.begin(115200);
+    Ultrasonic1.begin();            //超声波初始化
+    while (!Serial); // wait for Leonardo enumeration, others continue immediately
+    Serial.print(F("setup begin\r\n"));
+    delay(100);
+    pinMode(sensorPin_1, INPUT);                   
+    pinMode(sensorPin_2, INPUT);                            //定义引脚为输入模式
+    
+    
+    WifiInit(EspSerial, UARTSPEED);
+
+     Serial.print(F("FW Version:"));
+     Serial.println(wifi.getVersion().c_str());
+
+      if (wifi.setOprToStationSoftAP()) {
+    Serial.print(F("to station + softap ok\r\n"));
+  } else {
+    Serial.print(F("to station + softap err\r
