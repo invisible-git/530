@@ -1,0 +1,74 @@
+/* pages/image/image.wxss */
+/* .desk{
+  margin: 40px;
+  width: 300px;
+  height: 165px;
+}
+.imp1{
+  opacity: 0;
+  width:80px;
+  height: 80px;
+  margin: 10rpx 20rpx;
+}
+.imp2{
+  opacity: 0;
+  width:80px;
+  height: 80px;
+  margin: 10rpx 180rpx 10rpx;
+}
+.imp3{
+  opacity: 0;
+  width:80px;
+  height: 80px;
+  margin: 10rpx 20rpx;
+}
+.imp4{
+  opacity: 0;
+  width:80px;
+  height: 80px;
+  margin: 10rpx 180rpx 10rpx;
+} */
+/* .display {
+  opacity: 1;
+} */
+.imp1, .imp2, .imp3, .imp4 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+}
+.desk{
+  position: absolute;
+  width: 300px;
+  height:165px
+}
+.imp1{
+  left: 20px;
+  top: 20px;
+}
+.imp2{
+  left: 250px;
+  top: 20px;
+}
+.imp1{
+  left: 20px;
+  top: 20px;
+}
+.imp2{
+  left: 250px;
+  top: 20px;
+}
+.imp3{
+  left: 20px;
+  top: 270px;
+}
+.imp4{
+  left: 250px;
+  top: 270px;
+}
+.desk{
+  left: 20px;
+  top:100px;
+}
+
+
+

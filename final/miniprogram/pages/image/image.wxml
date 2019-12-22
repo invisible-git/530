@@ -1,0 +1,11 @@
+
+<!-- <image class="imp1 {{x1 == 1 ? 'display' : ''}}" src="../../images/people.jpg"></image>
+<image class="imp2 {{x2 == 1 ? 'display' : ''}}" src="../../images/people.jpg"></image>
+<image class="desk" src="../../images/perfect.jpg"></image>
+<image class="imp3 {{x3 == 1 ? 'display' : ''}}" src="../../images/people.jpg"></image>
+<image class="imp4 {{x4 == 1 ? 'display' : ''}}" src="../../images/people.jpg"></image> -->
+<image wx:if="{{x1==1.00}}"class="imp1" src="../../images/people.jpg"></image>
+<image wx:if="{{x2==1.00}}"class="imp2" src="../../images/people.jpg"></image>
+<image class="desk" src="../../images/perfect.jpg"></image>
+<image wx:if="{{x3==1.00}}"class="imp3" src="../../images/people.jpg"></image>
+<image wx:if="{{x4==1.00}}"class="imp4" src="../../images/people.jpg"></image>

@@ -1,0 +1,8 @@
+
+<view class="no1">图书馆空座位查询</view>
+<button class="no2" bindtap="second">二层</button>
+<button class="no3" bindtap="third">三层</button>
+<button class="no4" bindtap="fourth">四层</button>
+<button class="no5" bindtap="fifth">五层</button>
+
+

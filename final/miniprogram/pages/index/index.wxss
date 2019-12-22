@@ -1,0 +1,22 @@
+.no1{
+font-size: 30px;
+font-weight: bold;
+color: black;
+text-align: center;
+margin: 30px;
+}
+.no2{
+  margin: 15rpx;
+}
+.no3{
+  margin: 15rpx;
+}
+.no4{
+  margin: 15rpx;
+}
+.no5{
+  margin: 15rpx;
+}
+page{
+  background: -webkit-linear-gradient(top,rgb(244,157,4),#FACF94,white);
+}
